@@ -1,0 +1,12 @@
+# Run React app from Django server.
+URL : https://www.youtube.com/watch?v=F9o4GSkSo40
+1. create a django project : django-admin startproject todo
+2. run: npx create-react-app reactapp inside todo project.
+3. build react app : npm run build
+4. open settings: TEMPLATES >> os.path.join(BASE_DIR, 'reactapp/build')
+5. add static dir : in seetings.py >> STATICFILES_DIRS = [os.path.join(BASE_DIR, 'reactapp/build/static')]
+6. urls.py : from django.views.generic import TemplateView 
+            add >> urlspatters >> path('', TemplateView.as_view(template_name='index.html'))
+7. run: server  : Python manage.py runserver         
+8. change default react app page.
+   
